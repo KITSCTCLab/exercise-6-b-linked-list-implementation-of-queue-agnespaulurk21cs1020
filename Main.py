@@ -10,13 +10,22 @@ class Queue:
     self.last = None
 
   def enqueue(self, data) -> None:
-    # Write your code here
+    n=Node(data)
+    n.next=None
+    self.last=n
 
   def dequeue(self) -> None:
-    # Write your code here
+    if self.head!=None:
+      self.head=self.head.next
 
   def status(self) -> None:
-    # Write your code here
+    elements=""
+    curr=self.head
+    while curr!=None:
+      elements+=str(curr.data)+"=>"
+      curr=curr.next
+    print(elements+"None")
+    
 
 
 # Do not change the following code
