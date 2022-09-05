@@ -11,13 +11,18 @@ class Queue:
 
   def enqueue(self, data) -> None:
     n=Node(data)
-    n.next=None
-    self.last=n
+    if  self.last!= None:
+      self.last.next = n
+    if self.head == None:
+      self.head = n
+    self.last = n
 
   def dequeue(self) -> None:
     if self.head!=None:
       self.head=self.head.next
-
+    if self.head==None:
+      self.last=None
+      
   def status(self) -> None:
     elements=""
     curr=self.head
